@@ -6,7 +6,7 @@
 
 - [About the project behind these guidelines](#about-the-project-behind-these-guidelines)
 - [About the guidelines](#about-the-guidelines)
-  - [GUIDELINES.md vs README.md](#guidelinesmd-vs-readmemd)
+  - [CONTRIBUTING.md vs README.md](#contributingmd-vs-readmemd)
 - [Getting started](#getting-started)
   - [Version control](#version-control)
   - [Project management](#project-management)
@@ -66,9 +66,9 @@ The guidelines are a part of the codebase for this project both in order to make
 
 <a id="guidelinesmd-vs-readmemd"></a>
 
-### GUIDELINES.md vs README.md
+### CONTRIBUTING.md vs README.md
 
-The project README contains information about how to install, run and configure the application, whereas the guidelines cover the development practices our team adopts when making changes to the project.
+The project README contains information about how to install, run and configure the application, whereas the guidelines (CONTRIBUTING.md) cover the development practices our team adopts when making changes to the project.
 
 <a id="getting-started"></a>
 

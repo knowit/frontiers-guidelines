@@ -3,7 +3,7 @@
 <!-- TOC -->
 
 - [About the guidelines](#about-the-guidelines)
-  - [GUIDELINES.md vs README.md](#guidelinesmd-vs-readmemd)
+  - [CONTRIBUTING.md vs README.md](#contributingmd-vs-readmemd)
 - [Getting Started](#getting-started)
   - [Version control](#version-control)
   - [Project management](#project-management)
@@ -44,9 +44,9 @@ You can use this section to add any other details about the nature of this docum
 
 <a id="guidelinesmd-vs-readmemd"></a>
 
-### GUIDELINES.md vs README.md
+### CONTRIBUTING.md vs README.md
 
-We suggest using your project's README file for information about installing, running and configuring the application. The GUIDELINES.md files can be used to cover the development practices your team adopts when working on the project.
+We suggest using your project's README.md file for information about installing, running and configuring the application. The CONTRIBUTING.md file can be used to cover the development practices your team adopts when working on the project.
 
 <a id="getting-started"></a>
 
