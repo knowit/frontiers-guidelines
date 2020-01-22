@@ -28,6 +28,7 @@
 - [Media](#media)
 - [Fonts](#fonts)
 - [Performance](#performance)
+- [Deployment](#deployment)
 - [Localization](#localization)
 
 <hr />
@@ -62,7 +63,7 @@ In this section, you can include the following:
 - Details about the version control workflow your team is adopting. Will you be using Gitflow or feature branching? Will commits be squashed when merging into master?
 - Any naming conventions your team is adopting. Will you name your branches using a particular syntax? Does your task management platform integrate with your VCS via prefixed commit messages?
 - Details about how your team plans to do code reviews, if applicable.
-- Information about deployment/integration to test and production environments.
+- Information about deployment/integration to test and production environments. There is a separate section for [deployment](#deployment) towards the end of the template in case this warrants a section of its own.
 
 <a id="project-management"></a>
 
@@ -231,6 +232,10 @@ You can provide additional testing information as well, such as how to use tools
 - How are you measuring your project's speed (e.g., using a tool like [Pingdom Speed Test](http://tools.pingdom.com/) or [Google PageSpeed](https://developers.google.com/speed/pagespeed/))?
 - Do you use techniques decrease file size (such as [Gzip](https://css-tricks.com/snippets/htaccess/active-gzip-compression/) and [Image Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization))?
 - Do you use other performance-related tools in your workflow, like [WebPagetest](http://www.webpagetest.org/), [BigRig](https://aerotwist.com/blog/bigrig/) or [Speedcurve](https://speedcurve.com/)?
+
+## Deployment
+
+How is your front-end code integrated into a production environment?
 
 ## Localization
 
