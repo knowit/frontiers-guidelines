@@ -173,7 +173,7 @@ If you have chosen not to use a common formatter/linter for your CSS, coding sty
 
 ### Directory structure
 
-- You can use this section to describe the directory structure (and file import) conventions do the project's developers follow.
+- You can use this section to describe the directory structure (and file import) conventions your team follows.
 
 ### CSS pre- and post-processing
 
