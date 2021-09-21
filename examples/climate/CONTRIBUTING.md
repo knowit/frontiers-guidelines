@@ -68,7 +68,6 @@ We suggest using your project's README.md file for information about installing,
     - *Note*: commits should be consistent with this format: `<Change Type>(<fileName>): <Your Change>`
     - *Example:* `fix(HomePage): Tweaked height of left section`
 
-<br />
 
 **Example branch:** *feature/my-new-feature-task-T123*
 
@@ -215,7 +214,7 @@ In the case of this project, I have attempted to merge the best of two worlds: `
 
 #### Global
 
-Like in most projects, I defined a base style for every tag, like font family, size and so forth. This allows for a consistent and easily editable reference point. All components, modules and pages should always import a core reference to the `styling.scss` file, which will allow access to various utilities.
+Like in most projects, I defined a base style for every tag, like font family, size and so forth. This allows for a consistent and easily editable reference point. All components, modules and pages should always import a core reference to the `styling.scss` file, which will allow access to various utilities. If there is an easier way to import (by default) a global style file, then do that instead!
 
 - `styles`
   - `styling`
@@ -452,9 +451,22 @@ New content / reusable components are put into these categories based on their c
 
 Other JavaScript related code, such as utility scripts should always be placed into their own service layer with `helper` functionality and `async` functionality. In other words: global or common functionality.
 
-**Note: useContext**
 <br />
-Another important thing to note is the `useContext` hook. When utilizing this hook, it is ideal to keep all context handling within a `Page`. `Modules` and `Components` should always be fed data and not attempt to fetch it externally. This way, we can always know where the data-flow is set and avoid any deep dives into several modules and components before you figure out what to do.
+
+**Note: useContext**
+
+When utilizing the `useContext` hook, it is ideal to keep all context handling within a `Page`. `Modules` and `Components` should always be fed data and not attempt to fetch it externally. This way, we can always know where the data-flow is set and avoid any deep dives into several modules and components before you figure out what to do.
+
+Overall context usage:
+
+- In regular / basic `components` (No)
+- In `modules` (No)
+- For global access (App or top of your hierarchy)
+- For limited access (Pages)
+
+The reasoning behind not placing every variable you want to access within the top of your hierarchy is because everytime you change a value - you will trigger a rerender for every child within the parent node.
+
+<br />
 
 *Example:*
 - `/services/Utilities.ts / .js`
@@ -563,12 +575,6 @@ Potential tools:
 - How are you measuring your project's speed (e.g., using a tool like [Pingdom Speed Test](http://tools.pingdom.com/) or [Google PageSpeed](https://developers.google.com/speed/pagespeed/))?
 - Do you use techniques decrease file size (such as [Gzip](https://css-tricks.com/snippets/htaccess/active-gzip-compression/) and [Image Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization))?
 - Do you use other performance-related tools in your workflow, like [WebPagetest](http://www.webpagetest.org/), [BigRig](https://aerotwist.com/blog/bigrig/) or [Speedcurve](https://speedcurve.com/)?
-
-<br />
-
-## Deployment
-
-How is your front-end code integrated into a production environment?
 
 <br />
 
