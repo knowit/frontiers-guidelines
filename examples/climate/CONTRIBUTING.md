@@ -33,7 +33,7 @@
 
 ## About the guidelines
 
-These guidelines were written to help developers further develop or maintain for the Norwegian Climate Foundation application. I have removed identifying links and references so that this example could be made public. If you are a Knowit employee interested in more details about the original project, get in touch with the frontend developer:
+These guidelines were written to help developers further develop or maintain `Project: Climate`. I have removed identifying links and references so that this example could be made public. If you are a Knowit employee interested in more details about the original project, get in touch with the frontend developer:
 
 - <tord.nylund@knowit.no> (front-end lead on the project)
 - <tord.nylund@knowit.no> (author of the guidelines)
@@ -67,6 +67,12 @@ We suggest using your project's README.md file for information about installing,
     - `develop` should then do a `squash-merge` with `master` containing a patch-note list of new features and bug fixes.
     - *Note*: commits should be consistent with this format: `<Change Type>(<fileName>): <Your Change>`
     - *Example:* `fix(HomePage): Tweaked height of left section`
+
+<br />
+
+**Example branch:** *feature/my-new-feature-task-T123*
+
+<br />
 
 <a id="project-management"></a>
 
@@ -156,7 +162,7 @@ By Norwegian law, our site needs to meet 35 of the 61 success criteria detailed 
 
 ### HTML methodology and principles
 
-When writing new html templates for new components, it is important to remember which of these elements should be interactable or represent something to the user. Semantic representation should always be a priority, that; and various elements that fulfill UU requirements.
+When writing new html templates for new components, it is important to remember which of these elements should be interactable or represent something to the user. Semantic representation should always be a priority, that; and various elements that should fulfill UU requirements.
 
 A good idea is to create a specialized version of an element that lies within the same category so to speak: like a `<Text />` component for example. This allows for a singular point of entry if something needs to be adjusted, as well as forcing people to use semantic representation of various text elements, such as `<h1 />`, `<h2 />`, etc. Another neat thing about using defined elements is that you could always cement their ideal default state throughout your application.
 
@@ -389,6 +395,47 @@ Another neat thing you could do, instead of defining the colors in both your css
 
 <br />
 
+### Dynamic Variables
+
+This project frequently utilizes dynamtic variables that will, in this case, change based on screen size. An important note to add, is that these variables should be discussed with your designer, so that you know their spacing rule (or a `base-spacing`). You could always discuss if there are different spaces used for various scenarios, but should always reference these values when adding spacing throughout your application. *(Illustration 0.7)*
+
+<br/>
+
+```scss
+
+// Place in your variables.scss -file
+
+.base-variables {
+    --base-spacing: 2rem;
+
+    @include smallDesktop {
+        --base-spacing: 1.5rem;
+    }
+
+    @include tablet {
+        --base-spacing: 1.5rem;
+    }
+
+    @include mobile {
+        --base-spacing: 1rem;
+    }
+}
+
+// Place within your index.scss -file
+
+html {
+  @extend .base-variables;
+  @extend .theme-main;
+  @extend .typography;
+}
+
+```
+**Illustration (0.7):** *Depicts how you could structure your variables to dynamically change within your scss constraints.*
+
+**Note:** *You can also change these css variables through one of your js -scripts!*
+
+<br />
+
 <a id="javascript"></a>
 
 ## JavaScript
@@ -404,6 +451,10 @@ In this project the code follows a consistent pattern with the use of sections s
 New content / reusable components are put into these categories based on their complexity. The less complex component functions are put into the `components` category, while more complex versions are put in the `modules` category. Pages are overall the most complex beasts you create and can contain both modules and components (same goes for modules). 
 
 Other JavaScript related code, such as utility scripts should always be placed into their own service layer with `helper` functionality and `async` functionality. In other words: global or common functionality.
+
+**Note: useContext**
+<br />
+Another important thing to note is the `useContext` hook. When utilizing this hook, it is ideal to keep all context handling within a `Page`. `Modules` and `Components` should always be fed data and not attempt to fetch it externally. This way, we can always know where the data-flow is set and avoid any deep dives into several modules and components before you figure out what to do.
 
 *Example:*
 - `/services/Utilities.ts / .js`
@@ -423,6 +474,45 @@ When it comes to the internal code structure, it is wise to separate various fun
 
 An additional note is to avoid adding styling or too many class references within a component and rather let the component utilize its own style and other common `styling` references available. If you want multiple styled versions of a component, it is always possible to add new ones by creating additional files. Just remember to let each component have their own unique `componentClass` or `classPrefix` as reference and build on those base values. 
 
+<br />
+
+```jsx
+
+  interface IProps : IComponentBase {
+    title: string
+  }
+
+  const MyComponent = (props: IProps) => {
+
+    // ************************************
+    // Properties
+    // ************************************
+
+    const { theme, title } = props;
+
+    // ************************************
+    // Render
+    // ************************************
+
+    return(
+      <article>
+        <h2> {title} </h2>
+        <section>
+          <h3></h3>
+          <p></p>
+        </section>
+      </article>
+    );
+
+  }
+
+  export default MyComponent;
+  
+```
+**Illustration (0.8):** *A very basic look at how you could structure your component.*
+
+<br/>
+
 ## Accessibility
 
 External tools / references:
@@ -439,14 +529,14 @@ Icons are all retrieved via a `<Icon />` component whilst larger svg images are 
 ```tsx
   import banner from "../../assets/bannerImages/finding-the-path.svg";
 ```
-**Illustration (0.7):** *Basic import of asset inside component*
+**Illustration (0.9):** *Basic import of asset inside component*
 
 <br />
 
 ```tsx
   import { ReactComponent as VerticalEmissionMeterGraphic } from "../../assets/bannerImages/vertical-emission-meter-graphic.svg";
 ```
-**Illustration (0.8):** *Import asset and convert it to a react component*
+**Illustration (1.0):** *Import asset and convert it to a react component*
 
 <br />
 
@@ -459,7 +549,7 @@ There are multiple ways to setup a font reference, either download and add to yo
 ```scss
   @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700;800&display=swap');
 ```
-**Illustration (0.9):** *Basic import of external font*
+**Illustration (1.1):** *Basic import of external font*
 
 <br />
 
