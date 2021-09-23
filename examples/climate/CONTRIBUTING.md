@@ -182,14 +182,6 @@ We try to use appropriate semantic HTML5 tags whenever we can. We try to be as p
 [This cheat sheet](https://learn-the-web.algonquindesign.ca/topics/html-semantics-cheat-sheet/) is a nice quick reference for the semantics of some popular tags; see also [this handy checklist](https://learn-the-web.algonquindesign.ca/topics/html-semantics-checklist/) for writing semantic HTML.
 See [this W3C page](https://www.w3.org/TR/2016/REC-html51-20161101/dom.html#kinds-of-content) for more extensive documentation about elements used for particular types of content (e.g. heading, sectioning, and interactive elements).
 
-### HTML tools
-
-In this section, you can include the following:
-
-- your HTML preprocessor (if applicable), such as [HAML](http://haml.info/) or [Jade](http://jade-lang.com/);
-- your templating engine (if applicable), such as [Mustache](https://mustache.github.io/) or [Handlebars](http://handlebarsjs.com/);
-- information about the backend architecture's influence on the frontend markup (if applicable).
-
 ### HTML coding style
 
 If you have chosen not to use a common formatter/linter for HTML code, coding style specifications can be made here. You can also specify under what (if any) circumstances are HTML comments acceptable and how such comments will look and e.g. stripped out before going to production.
@@ -358,7 +350,7 @@ The ideal approach, in the case of this project, would be to feed every componen
 
   // New Component File
 
-  interface IProps : IComponentProps {
+  interface IProps extends IComponentProps {
     text: string,
   }
 
@@ -464,7 +456,7 @@ Overall context usage:
 - For global access (App or top of your hierarchy)
 - For limited access (Pages)
 
-The reasoning behind not placing every variable you want to access within the top of your hierarchy is because everytime you change a value - you will trigger a rerender for every child within the parent node.
+The reason for not placing every variable you want to access within the top of your hierarchy is because everytime you change said value - you will trigger a rerender for every child within the parent node.
 
 <br />
 
