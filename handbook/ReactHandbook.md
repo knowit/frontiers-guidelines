@@ -570,6 +570,9 @@ This react version bases itself on custom setup of styling and little to no use 
 
 ```scss
 
+$my-static-variable: 20px; // Static variables that cannot be edited runtime
+--my-css-variable: 20px; // Variables that can be referenced externally and edited runtime (please use these instead)
+
 @extend .someClass; // Extend with a existing class
 @mixin myFunc(); // Custom functionality
 @include (); // Call and use of mixins (custom functionality)
@@ -578,9 +581,85 @@ This react version bases itself on custom setup of styling and little to no use 
 **Illustration (1.9):** *Sass functionality*
 
 <br />
+
+
+
+<br />
 <hr />
 
 ## Storybook
 
 <hr />
 <br />
+
+The use of storybook is a great addition to your application. It allows for displaying all your components and their variations. You can also live edit your component parameters, allowing for testing and showcases to customers.
+
+The main feature however, is the possibility to setup stories with your own mockdata - a fast way for prototyping your application with your existing components.
+
+<br />
+
+### Setup - base styling
+
+When you install your storybook library, you will be handed a `stories` folder where all you story related things go. In here, add your own `styling` folder and reference your external one for consistent styling.
+
+<br />
+
+```
+
+⌵ stories
+    ⌵ styling
+        Stories.scss
+    > components
+    > modules
+    > pages
+
+```
+**Illustration (2.0):** *Example of a storybook folder structure*
+
+<br />
+
+```tsx
+
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Button from '../components/button/Button';
+import Text from '../components/text/Text';
+import "./styling/Stories.scss";
+
+// ************************************
+// Story: Button : Template
+// ************************************
+
+const TemplateButton : ComponentStory<typeof Button> = (args) => {
+    return(
+        <Button {...args} >
+            <Text
+              type="label"
+              text="Button"
+            />
+        </Button>
+    );
+}
+
+export const DemoButton = TemplateButton.bind({});
+
+// ************************************
+// Story: Button : Default Args
+// ************************************
+
+DemoButton.args = {
+  type: "action",
+  theme: "dark"
+}
+
+// ************************************
+// Story: Button : Default Export
+// ************************************
+
+export default {
+    title: "Demos/Components",
+    component: Button,
+    subcomponents: { Text }
+} as ComponentMeta<typeof Button>;
+
+```
+**Illustration (2.1):** *Example of a button component story that can be live edited*
