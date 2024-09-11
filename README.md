@@ -6,22 +6,20 @@ Props to [Brad Frost](https://bradfrost.com/blog/post/frontend-guidelines-questi
 
 # Getting Started
 
-This repository includes three kinds of markdown files: this README (hello there! 👋); a template you can use to get started; and example guidelines used for real, living, breathing applications.
-
-We only have one guidelines example at present. You'll find those guidelines—which were used in developing a web app for a Norwegian bank—under `examples\bank`.
+This repository includes three kinds of markdown files: this README (hello there! 👋); a template you can use to get started; and example guidelines used for real, living, breathing applications. You'll find the example guidelines in the `examples` folder.
 
 We suggest you start by **adding the guidelines template to your project's repository** and naming it `CONTRIBUTING.md`. Making the guidelines a part of your codebase will make changes to them more visible to your teammates and it'll make the guidelines easy to update.
 
 Get a pot of coffee, some decent snacks, and go through the template along with everyone on your team who might touch the front-end of your application. Although it's probably a good idea for one developer to take ownership of ensuring the guidelines get written, the process of drafting them together with your teammates is valuable in and of itself. Although they can be refined by individual authors, the document should not be written entirely by one person in isolation.
 
-To help you get started, you can have a look at our example and see what choices we made when working on `examples\bank\CONTRIBUTING.md`.
+To help you get started, you can have a look at our examples and see what choices teams made when creating their `CONTRIBUTING.md` files.
 
 # Contributing
 
-Has your team benefitted from defining front-end guidelines? Others might appreciate having a look at what you put together! Please open a pull request if you have guidelines that might serve as a good example for others. You can also open a PR or get in touch with us if you'd like to contribute to the template itself.
+Has your team benefitted from defining some frontend guidelines? Others might appreciate having a look at what you put together! Please open a pull request if you have a `CONTRIBUTING.md` file that might serve as a good example for others. You can also open a PR or get in touch with us if you'd like to contribute to the template itself.
 
 If you used a custom config file for e.g. your linter or code formatter, feel free to include it in your example's folder. You can also include any notes you think would be helpful regarding what worked well with the guidelines and what you would have done differently.
 
 # Feedback
 
-We're thankful for any suggestions you can offer as to how we can improve on these guidelines or make it easier for others to contribute! Please share your thoughts with <Maja.Jaakson@knowit.no> or <Christian.Grimsgaard@knowit.no> -- we're looking forward to hearing from you 😁
+We're thankful for any suggestions you can offer as to how we can improve on these guidelines or make it easier for others to contribute! Please share your thoughts with <maja@jaakson.ca> or <chrisgrimsgaard@gmail.com> -- we're looking forward to hearing from you 😁
